@@ -1,0 +1,76 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+class Stack {
+    //properties
+    public:
+    int *arr;
+    int top;
+    int size;
+    
+    Stack (int size){
+        this -> size = size ;
+        arr = new int[size];
+        top = -1 ;
+    }
+ //functions
+ 
+ void push (int  element){
+     if (size - top > 1){
+         top++ ;
+         arr[top] = element ;
+     }else {
+         cout<<"stack is over flow ";
+     }
+ }
+ void pop(){
+     if (top >= 0) {
+         top-- ;
+     }else{
+         cout<<"stack under flow: ";
+     }
+     
+ }
+ int peek(){
+     if (top>= 0 )
+     return arr[top];
+     else {
+         cout<<"stack is empty ";
+         return -1 ;
+     }
+ }
+ 
+ bool isEmpty(){
+     if(top == -1)
+     return true ;
+     else {
+         return -1;
+     }
+ }
+ 
+};
+int main() {
+    // stack <int> p;
+      // //insert
+    // p.push(2);
+    // p.push(3);
+    // p.pop();
+    
+    // cout<<"printing top element: "<<p.top() <<endl;
+    // if (p.empty()){
+    //     cout<<"stack is empty "<<endl;
+    // }else{
+    //     cout<<"stack is not empty "<<endl ;
+    // }
+    // cout<<p.size();
+    
+    // return 0;
+    
+    Stack st(5);
+    st.push(10);
+    st.push(20);
+    st.push(30);
+    
+    cout<<st.peek()<<endl ;
+    
+}
